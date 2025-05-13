@@ -27,7 +27,6 @@ export class InvestmentComponent {
     if (this.formGroup.valid) {
       this.formData = this.formGroup.value;
       this.isConfirmed = true;
-      this.onConfirmSubmit();
     }
   }
 
