@@ -1,27 +1,86 @@
-# Portfoliomanagement
+💼 Portfolio Management System
+A web-based application developed using Angular for managing financial portfolios. It enables users to track investments, analyze performance metrics, and make informed decisions.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+📁 Project Structure
+The project follows a modular structure to promote scalability and maintainability:
 
-## Development server
+graphql
+Copy
+Edit
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+portfoliomanagement/
+├── .vscode/                 # Visual Studio Code configurations
+├── src/                     # Source files
+│   ├── app/                 # Main application module
+│   │   ├── components/      # Reusable UI components
+│   │   ├── directives/      # Custom directives
+│   │   ├── models/          # TypeScript interfaces and models
+│   │   ├── services/        # Services for data fetching and business logic
+│   │   ├── interceptors/    # HTTP interceptors for global request handling
+│   │   ├── pages/           # Feature modules and pages
+│   │   └── app.module.ts    # Root module
+│   ├── assets/              # Static assets (images, styles, etc.)
+│   └── environments/        # Environment-specific configurations
+├── angular.json             # Angular CLI configuration
+├── package.json             # NPM dependencies and scripts
+├── tsconfig.json            # TypeScript compiler configuration
+└── README.md                # Project documentation
+🚀 Getting Started
+Prerequisites
+Node.js (v18 or higher)
 
-## Code scaffolding
+Angular CLI (v16 or higher)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Installation
+Clone the repository:
 
-## Build
+bash
+Copy
+Edit
+git clone https://github.com/balaajimuthukumar/portfoliomanagement.git
+cd portfoliomanagement
+Install dependencies:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+bash
+Copy
+Edit
+npm install
+Run the development server:
 
-## Running unit tests
+bash
+Copy
+Edit
+ng serve
+Access the application:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Open your browser and navigate to http://localhost:4200/.
 
-## Running end-to-end tests
+✨ Features
+Dashboard with Interactive Charts:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Asset Allocation (Pie Chart)
 
-## Further help
+Market Trends (Line Chart)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Performance Metrics (Bar Chart)
+
+Investment Forms:
+
+Input asset type, quantity, purchase price, and date.
+
+Review data before submission.
+
+Form validation using Angular Reactive Forms.
+
+Data Management:
+
+Services for fetching and managing data.
+
+State management using RxJS Observables.
+
+Mock APIs for data retrieval.
+
+Responsive Design:
+
+Grid layout adaptable to various screen sizes.
+
