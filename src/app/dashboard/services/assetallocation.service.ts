@@ -19,7 +19,6 @@ export class AssetAllocationService {
     return of(data);
   }
   getAssetComparisonData(): Observable<any> {
-    // Mocked API response
     const data = {
       labels: ['Stocks', 'Bonds', 'Real Estate'],
       datasets: [
@@ -30,6 +29,6 @@ export class AssetAllocationService {
         }
       ]
     };
-    return of(data); // Simulate an asynchronous API call
+    return of(data);
   }  
 }
