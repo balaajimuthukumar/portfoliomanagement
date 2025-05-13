@@ -1,8 +1,12 @@
 .chart-grid {
   display: grid;
-  gap: 20px;
-  padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)) !important;
+  gap: 30px;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.heightclass {
+  height: 500px !important;
 }
 
 .chart-item {
@@ -24,26 +28,28 @@ h3 {
 }
 
 .piechart {
-  width: 25rem !important;
-  height: 25rem !important;
+  width: 32rem !important;
+  height: 26rem !important;
 }
 
 .barchart {
   width: 32rem !important;
-  height: 20rem !important;
+  height: 26rem !important;
 }
 
 .linechart {
   width: 32rem !important;
-  height: 20rem !important;
+  height: 26rem !important;
+}
+
+.performancechart {
+  width: 32rem !important;
+  height: 20rem !important;  
 }
 
 canvas {
-  max-width: 100%;
   height: 400px;
 }
-
-
 
 @media (max-width: 768px) {
   .chart-grid {
@@ -54,4 +60,3 @@ canvas {
     height: 18rem !important;
   }
 }
-

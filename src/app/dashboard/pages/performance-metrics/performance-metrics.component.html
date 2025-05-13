@@ -1,9 +1,12 @@
-<div class="chart-container">
-  <h3>Performance Metrics (Portfolio vs Benchmark)</h3>
-  <canvas 
-    appChart 
-    [chartType]="'line'" 
-    [chartData]="performanceData" 
-    [chartOptions]="performanceOptions">
-  </canvas>
-</div>
+
+  <div class="chart-item">
+    <h3>Performance Metrics (Portfolio vs Benchmark)</h3>
+    <canvas 
+      appChart
+      class="linechart"
+      [chartType]="'line'" 
+      [chartData]="performanceData" 
+      [chartOptions]="performanceOptions">
+    </canvas>
+  </div>
+

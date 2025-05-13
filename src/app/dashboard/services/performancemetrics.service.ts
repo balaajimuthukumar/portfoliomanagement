@@ -8,9 +8,7 @@ export class PerformanceMetricsService {
 
   constructor() { }
 
-  // Simulating an API call with Observable
   getPerformanceData(): Observable<any> {
-    // Simulated data (You can replace this with an actual API call)
     const performanceData = {
       labels: ['January', 'February', 'March', 'April', 'May'],
       datasets: [
@@ -31,7 +29,6 @@ export class PerformanceMetricsService {
       ]
     };
 
-    // Simulate an API response with delay using 'of'
     return of(performanceData);
   }
 }

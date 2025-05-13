@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InvestmentService } from './services/investment.service';
 
 @Component({
   selector: 'app-investment',
@@ -10,11 +11,10 @@ export class InvestmentComponent {
   formGroup: FormGroup;
   isConfirmed = false;
   formData: any = {};
-
+  responseMessage = ''
   assetTypes = ['Stocks', 'Bonds', 'Real Estate', 'Commodities'];
 
-  constructor(private fb: FormBuilder) {
-    // Initialize the reactive form
+  constructor(private fb: FormBuilder, private formService: InvestmentService) {
     this.formGroup = this.fb.group({
       assetType: ['', Validators.required],
       quantity: [1, [Validators.required, Validators.min(1)]],
@@ -23,28 +23,27 @@ export class InvestmentComponent {
     });
   }
 
-  // Form submission
   onSubmit() {
-    console.log(this.formGroup);
     if (this.formGroup.valid) {
       this.formData = this.formGroup.value;
-      this.isConfirmed = true; // Toggle to confirmation page
-    } else {
-      alert('Please fill out all required fields');
+      this.isConfirmed = true;
     }
   }
 
-  // Toggle back to the form for editing
   onEdit() {
     this.isConfirmed = false;
     this.formGroup.reset();
   }
 
-  // Submit the form (you can add backend logic here)
   onConfirmSubmit() {
-    console.log('Form Submitted:', this.formData);
-    alert('Form Submitted Successfully');
-    this.formGroup.reset();
-    this.isConfirmed = false;
-  } 
+    this.formService.submitInvestment(this.formData).subscribe({
+      next: (response) => {
+        this.responseMessage = response.message;
+        this.formGroup.reset();
+        this.isConfirmed = false;
+      },
+      error: (error) => {
+      }
+    });
+  }
 }

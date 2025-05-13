@@ -6,7 +6,6 @@ import { of, Observable } from 'rxjs';
 })
 export class PriceTrendService {
   getPriceTrendData(): Observable<any> {
-    // Mocked API response for price trend data
     const data = {
       labels: ['2025-01-01', '2025-02-01', '2025-03-01'],
       datasets: [
@@ -19,6 +18,6 @@ export class PriceTrendService {
         }
       ]
     };
-    return of(data); // Simulates an asynchronous API response
+    return of(data);
   }
 }

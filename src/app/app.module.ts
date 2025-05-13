@@ -11,8 +11,9 @@ import { Chart, ArcElement, Tooltip, Legend, PieController, BarController, BarEl
 import { AssetAllocationComponent } from './dashboard/pages/asset-allocation/asset-allocation.component';
 import { PriceTrendComponent } from './dashboard/pages/pricetrend/pricetrend.component';
 import { PerformanceMetricsComponent } from './dashboard/pages/performance-metrics/performance-metrics.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorInterceptor } from './http-interceptor.interceptor';
 
-// Register the necessary components from Chart.js
 Chart.register(ArcElement, Tooltip, Legend, PieController, CategoryScale, LinearScale, BarController, BarElement,LineController, LineElement,PointElement);
 
 @NgModule({
@@ -31,7 +32,13 @@ Chart.register(ArcElement, Tooltip, Legend, PieController, CategoryScale, Linear
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorInterceptor,
+      multi: true,
+    }    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
