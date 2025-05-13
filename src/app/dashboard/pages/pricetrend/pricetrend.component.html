@@ -1,0 +1,11 @@
+<div class="chart-grid">
+    <div *ngIf="priceTrendData?.datasets" class="chart-item">
+      <h3>Market Price Trend</h3>
+      <canvas 
+        appChart 
+        [chartType]="'line'"
+        [chartData]="priceTrendData"
+        [chartOptions]="priceTrendOptions">
+      </canvas>
+    </div>
+</div>

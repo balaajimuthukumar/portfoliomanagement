@@ -1,0 +1,45 @@
+<div class="form-container">
+  <div *ngIf="!isConfirmed; else confirmationView">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <label for="assetType">Asset Type:</label>
+      <select formControlName="assetType" id="assetType">
+        <option value="" disabled>Select Asset Type</option>
+        <option *ngFor="let type of assetTypes" [value]="type">{{ type }}</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        formControlName="quantity"
+        placeholder="Enter quantity"
+      />
+
+      <label for="purchasePrice">Purchase Price:</label>
+      <input
+        type="number"
+        id="purchasePrice"
+        formControlName="purchasePrice"
+        placeholder="Enter price"
+        step="0.01"
+      />
+
+      <label for="purchaseDate">Purchase Date:</label>
+      <input type="date" id="purchaseDate" formControlName="purchaseDate" />
+
+      <button type="submit" [disabled]="formGroup.invalid">Submit</button>
+    </form>
+  </div>
+
+  <ng-template #confirmationView>
+    <h2>Confirm Your Data</h2>
+    <p><strong>Asset Type:</strong> {{ formData.assetType }}</p>
+    <p><strong>Quantity:</strong> {{ formData.quantity }}</p>
+    <p><strong>Purchase Price:</strong> {{ formData.purchasePrice }}</p>
+    <p><strong>Purchase Date:</strong> {{ formData.purchaseDate }}</p>
+
+    <button (click)="onEdit()">Edit</button>
+    <hr>
+    <button (click)="onConfirmSubmit()">Confirm and Submit</button>
+  </ng-template>
+</div>

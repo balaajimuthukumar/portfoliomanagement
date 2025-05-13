@@ -1,0 +1,23 @@
+<div class="chart-grid">
+  <div class="chart-item">
+    <h3>Asset Allocation Chart</h3>
+    <canvas 
+      appChart 
+      class="piechart"
+      [chartType]="'pie'" 
+      [chartData]="assetAllocationData" 
+      [chartOptions]="assetAllocationOptions">
+    </canvas>
+  </div>
+
+  <div class="chart-item">
+    <h3>Asset Allocation Comparison Chart</h3>
+    <canvas 
+      appChart 
+      class="barchart"
+      [chartType]="'bar'" 
+      [chartData]="assetComparisonData" 
+      [chartOptions]="assetComparisonOptions">
+    </canvas>
+  </div>
+</div>
